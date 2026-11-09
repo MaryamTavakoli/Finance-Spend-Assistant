@@ -1,0 +1,41 @@
+/* index.css: all page styles, kept small and plain. */
+
+/* --- Page basics --- */
+* { box-sizing: border-box; }   /* width includes padding and border: makes sizes predictable */
+body { margin: 0; font-family: system-ui, sans-serif; background: #f5f6f8; color: #1f2933; }
+
+/* --- Top bar --- */
+header { padding: 12px 24px; background: #1f2933; color: white; }
+header h1 { margin: 0; font-size: 18px; }
+
+/* --- Layout: summary panel (400px) on the left, chat on the right --- */
+main { display: grid; grid-template-columns: 400px 1fr; gap: 16px; padding: 16px; align-items: start; }
+/* On narrow screens (phones, small windows), stack them in one column */
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+
+/* --- White boxes: the summary panel and each chat card --- */
+aside, .card { background: white; border: 1px solid #dde1e6; border-radius: 8px; padding: 16px; overflow-x: auto; }
+aside h2 { margin-top: 0; }
+.chat { display: flex; flex-direction: column; gap: 12px; }
+
+/* --- Text styles --- */
+.question { font-weight: 600; margin-top: 0; }          /* the analyst's question */
+.small { font-size: 13px; color: #52606d; }             /* grey helper text */
+.error { color: #b42318; }                              /* red error text */
+.warning { background: #fff4e5; border: 1px solid #f5c26b; padding: 8px; border-radius: 6px; }  /* orange box */
+
+/* --- Tables, SQL and evidence --- */
+table { border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+th, td { border: 1px solid #dde1e6; padding: 4px 8px; text-align: left; }
+td { font-variant-numeric: tabular-nums; }              /* digits of equal width, so numbers line up */
+pre { background: #f0f2f5; padding: 8px; white-space: pre-wrap; font-size: 12px; }   /* SQL text */
+blockquote { margin: 8px 0; padding: 4px 12px; border-left: 3px solid #3e7bfa; background: #f5f8ff; }  /* policy quotes */
+details { margin: 6px 0; }
+summary { cursor: pointer; color: #3e7bfa; }            /* the clickable line of a fold-out */
+
+/* --- Input box and buttons --- */
+form { display: flex; gap: 8px; }
+input { flex: 1; padding: 10px; font-size: 15px; border: 1px solid #c1c7cd; border-radius: 6px; }   /* fills the row */
+button { padding: 8px 12px; cursor: pointer; border-radius: 6px; border: 1px solid #c1c7cd; background: white; }
+button:disabled { opacity: 0.5; cursor: default; }
+.example { display: block; margin: 6px 0; text-align: left; }   /* example questions, one per line */

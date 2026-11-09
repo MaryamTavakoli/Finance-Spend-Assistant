@@ -1,0 +1,22 @@
+# Python packages for the Finance Agent.
+# Install with:  uv pip install -r requirements.txt   (or: pip install -r requirements.txt)
+#
+# Versions are pinned (==) to the ones the notebook was tested with,
+# so everyone who installs gets exactly the same setup.
+
+# Agent
+langchain==1.4.2          # create_agent, @tool, init_chat_model
+langchain-openai==1.6.5   # lets init_chat_model use OpenAI models
+
+# Data
+duckdb==2.0.0             # in-memory SQL database for the CSV files
+
+# Config
+python-dotenv==1.2.3      # reads OPENAI_API_KEY from backend/.env
+
+# Notebook
+ipykernel==7.3.0          # lets VS Code / Jupyter run notebooks with this environment
+
+# Web API
+fastapi==0.162.0          # the API framework: routes, input checking, /docs page
+uvicorn==0.54.0           # the server that runs the FastAPI app

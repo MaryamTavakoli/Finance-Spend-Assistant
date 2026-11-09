@@ -1,0 +1,16 @@
+# secrets
+# Files and folders git should NOT track.
+
+# Secrets: backend/.env holds the OpenAI API key
+backend/.env
+
+# Python: the virtual environment and auto-generated cache files
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Frontend: installed packages (recreate with `npm install`) and build output
+node_modules/
+
+# macOS folder settings
+.DS_Store
